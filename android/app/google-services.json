@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "861859817294",
+    "project_id": "railway-work-tracking",
+    "storage_bucket": "railway-work-tracking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861859817294:android:39cc3050dcf448bab6601f",
+        "android_client_info": {
+          "package_name": "com.Manmohana.railway_work_tracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861859817294-aqbu6ooqsn9belf2jubp4sfapml8hb7f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Manmohana.railway_work_tracking",
+            "certificate_hash": "9b29d0b71cb24f300a7e407720cd5259b60a45ba"
+          }
+        },
+        {
+          "client_id": "861859817294-od6ktvpuoddufaj8ubda7qrjslc0ooao.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0X6T5Zwlp1QEaqqO-7CMoWuaYfbzDBEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861859817294-od6ktvpuoddufaj8ubda7qrjslc0ooao.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
