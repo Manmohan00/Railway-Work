@@ -362,6 +362,91 @@ class WorkRoadorLoop{
         Extra = user["${WorkListShort.Extra}_Road"]?? 'none';
 }
 
+class WorkRepeat{
+  int ERC;
+  int MBS;
+  int RH;
+  int Paint;
+  int ERCHeat;
+  int DressBox;
+  int Gas;
+  int NewMBC;
+  int Crib;
+  int TRRprep;
+  int TRR;
+  int Partner;
+  int Drill;
+  int Destress;
+  int DestressTensor;
+  int Railunload;
+  int MBCReplace;
+  int Lift;
+  int Pack;
+  int Generate;
+  int SEJ;
+  int RailPrep;
+  int LBR;
+  int Payment;
+  int Extra;
+
+  WorkRepeat({required this.ERC,
+    required this.MBS,
+    required this.RH,
+    required this.Paint,
+    required this.ERCHeat,
+    required this.DressBox,
+    required this.Gas,
+    required this.NewMBC,
+    required this.Crib,
+    required this.TRRprep,
+    required this.TRR,
+    required this.Partner,
+    required this.Drill,
+    required this.Destress,
+    required this.DestressTensor,
+    required this.Railunload,
+    required this.MBCReplace,
+    required this.Lift,
+    required this.Pack,
+    required this.Generate,
+    required this.SEJ,
+    required this.RailPrep,
+    required this.LBR,
+    required this.Payment,
+    required this.Extra
+  });
+
+
+
+  WorkRepeat.toJson(Map<String,dynamic> user):
+
+        ERC = user["${WorkListShort.ERC}"] ?? 0 ,
+        MBS = user["${WorkListShort.MBS}"] ?? 0,
+        RH = user["${WorkListShort.RH}"] ?? 0,
+        Paint = user["${WorkListShort.Paint}"]?? 0,
+        ERCHeat = user["${WorkListShort.ERCHeat}"]?? 0,
+        DressBox = user["${WorkListShort.DressBox}"]?? 0,
+        Gas = user["${WorkListShort.Gas}"]?? 0,
+        NewMBC = user["${WorkListShort.NewMBC}"]?? 0,
+        Crib = user["${WorkListShort.Crib}"]?? 0,
+        TRRprep =user["${WorkListShort.TRRprep}"]?? 0,
+        TRR = user["${WorkListShort.TRR}"]?? 0,
+        Partner = user["${WorkListShort.Partner}"]?? 0,
+        Drill = user["${WorkListShort.Drill}"]?? 0,
+        Destress = user["${WorkListShort.Destress}"]?? 0,
+        DestressTensor = user["${WorkListShort.DestressTensor}"]?? 0,
+        Railunload = user["${WorkListShort.Railunload}"]?? 0,
+        MBCReplace = user["${WorkListShort.MBCReplace}"]?? 0,
+        Lift = user["${WorkListShort.Lift}"]?? 0,
+        Pack = user["${WorkListShort.Pack}"]?? 0,
+        Generate = user["${WorkListShort.Generate}"]?? 0,
+        SEJ = user["${WorkListShort.SEJ}"]?? 0,
+        RailPrep = user["${WorkListShort.RailPrep}"]?? 0,
+        LBR = user["${WorkListShort.LBR}"]?? 0,
+        Payment = user["${WorkListShort.Payment}"]?? 0,
+        Extra = user["${WorkListShort.Extra}"]?? 0;
+}
+
 // class WorkLoop{
 //   String ERC;
 //   String MBS;

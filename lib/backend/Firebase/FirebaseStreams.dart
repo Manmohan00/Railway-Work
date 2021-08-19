@@ -61,4 +61,11 @@ class FirebaseStreams {
         WorkRoadorLoop.toJson(documentSnapshot.data() as Map<String, dynamic>));
   }
 
+  Stream<WorkRepeat> getWorkRepeat(bill, docDate) {
+    return _db
+        .collection(bill)
+        .doc(docDate).collection('Work_done').doc(FirebaseNames.work)
+        .snapshots().map((DocumentSnapshot documentSnapshot) =>
+        WorkRepeat.toJson(documentSnapshot.data() as Map<String, dynamic>));
+  }
 }

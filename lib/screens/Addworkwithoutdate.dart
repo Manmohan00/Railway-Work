@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:provider/provider.dart';
 import 'package:railway_work_tracking/backend/Firebase/FirebaseUploadTransactions.dart';
+import 'package:railway_work_tracking/backend/Firebase/WorkDataModel.dart';
 import 'package:railway_work_tracking/backend/Provider/AddWorkProvider.dart';
 import 'package:railway_work_tracking/backend/Provider/UserData.dart';
 import 'package:railway_work_tracking/screens/SharedPrefNames.dart';
@@ -19,6 +20,7 @@ class Addworkwithoutdate extends StatelessWidget {
 
     Map arguments =
         ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+    WorkRepeat workRepeatProvider = arguments['work'];
     String billName = arguments['Bill'];
     String date = arguments['Date'];
     String displayDate = arguments['displayDate'];
@@ -106,7 +108,8 @@ class Addworkwithoutdate extends StatelessWidget {
                                             comment,
                                             billName,
                                             user,
-                                            _roadorLoop
+                                            _roadorLoop,
+                                          workRepeatProvider,
                                         );
 
                                         if (doesNotexists == false) {

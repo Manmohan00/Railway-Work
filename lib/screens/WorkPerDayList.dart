@@ -39,6 +39,9 @@ class WorkPerDayList extends StatelessWidget {
         StreamProvider<WorkRoadorLoop>.value(
             value: FirebaseStreams().getWorkRoad(billName, firebaseDate),
             initialData: WorkRoadorLoop.toJson({'': ''})),
+        StreamProvider<WorkRepeat>.value(
+            value: FirebaseStreams().getWorkRepeat(billName, firebaseDate),
+            initialData: WorkRepeat.toJson({'': 0})),
       ],
       child: ListBuild(),
     );
@@ -58,6 +61,7 @@ class ListBuild extends StatelessWidget {
     WorkAddedbyUser userProvider = Provider.of<WorkAddedbyUser>(context);
     WorkComment commentProvider = Provider.of<WorkComment>(context);
     WorkRoadorLoop roadprovider = Provider.of<WorkRoadorLoop>(context);
+    WorkRepeat workRepeatProvider = Provider.of<WorkRepeat>(context);
 
     Map quantity = {
       WorkListShort.ERC: quantityProvider.ERC,
@@ -169,33 +173,6 @@ class ListBuild extends StatelessWidget {
       WorkListShort.Extra: roadprovider.Extra,
     };
 
-    // Map loop = {
-    //   WorkListShort.ERC: loopprovider.ERC,
-    //   WorkListShort.MBS: loopprovider.MBS,
-    //   WorkListShort.RH: loopprovider.RH,
-    //   WorkListShort.Paint: loopprovider.Paint,
-    //   WorkListShort.ERCHeat: loopprovider.ERCHeat,
-    //   WorkListShort.DressBox: loopprovider.DressBox,
-    //   WorkListShort.Gas: loopprovider.Gas,
-    //   WorkListShort.NewMBC: loopprovider.NewMBC,
-    //   WorkListShort.Crib: loopprovider.Crib,
-    //   WorkListShort.TRRprep: loopprovider.TRRprep,
-    //   WorkListShort.TRR: loopprovider.TRR,
-    //   WorkListShort.Partner: loopprovider.Partner,
-    //   WorkListShort.Drill: loopprovider.Drill,
-    //   WorkListShort.Destress: loopprovider.Destress,
-    //   WorkListShort.DestressTensor: loopprovider.DestressTensor,
-    //   WorkListShort.Railunload: loopprovider.Railunload,
-    //   WorkListShort.MBCReplace: loopprovider.MBCReplace,
-    //   WorkListShort.Lift: loopprovider.Lift,
-    //   WorkListShort.Pack: loopprovider.Pack,
-    //   WorkListShort.Generate: loopprovider.Generate,
-    //   WorkListShort.SEJ: loopprovider.SEJ,
-    //   WorkListShort.RailPrep: loopprovider.RailPrep,
-    //   WorkListShort.LBR: loopprovider.LBR,
-    //   WorkListShort.Payment: loopprovider.Payment,
-    //   WorkListShort.Extra: loopprovider.Extra,
-    // };
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -208,6 +185,7 @@ class ListBuild extends StatelessWidget {
           child: ListView.builder(
               itemCount: WorkListName.workListALL.length,
               itemBuilder: (BuildContext context, int index) {
+               // print(quantity[WorkListShort.workListALL[0]]);
                 return Visibility(
                   visible: quantity[WorkListShort.workListALL[index]] != '0'
                       ? true
@@ -294,6 +272,7 @@ class ListBuild extends StatelessWidget {
         onPressed: () {
           Navigator.pushNamed(context, Addworkwithoutdate.id,
           arguments: {
+            'work' : workRepeatProvider,
             'Bill' : billName,
             'Date' : firebaseDate,
             'displayDate' : date,

@@ -154,7 +154,7 @@ class AddWorkScreen extends StatelessWidget {
                                         }
                                         bool doesNotexists =
                                         await FirebaseUploadTransactions()
-                                            .AddworkToFirebase(
+                                            .AddNewworkToFirebase(
                                           date,
                                           work,
                                           quantity,

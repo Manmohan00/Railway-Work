@@ -5,9 +5,11 @@ import 'package:provider/provider.dart';
 import 'package:railway_work_tracking/backend/Firebase/FirebaseStreams.dart';
 import 'package:railway_work_tracking/backend/Firebase/WorkDataModel.dart';
 import 'package:railway_work_tracking/backend/Provider/AddWorkProvider.dart';
+import 'package:railway_work_tracking/backend/Provider/ExportasExcelProvider.dart';
 import 'package:railway_work_tracking/backend/Provider/UserData.dart';
 import 'package:railway_work_tracking/screens/AddWorkScreen.dart';
 import 'package:railway_work_tracking/screens/Addworkwithoutdate.dart';
+import 'package:railway_work_tracking/screens/ExportasExcel.dart';
 import 'package:railway_work_tracking/screens/HomeScreen.dart';
 import 'package:railway_work_tracking/screens/LoginScreen.dart';
 import 'package:railway_work_tracking/screens/WorkListScreen.dart';
@@ -42,6 +44,7 @@ class MyApp extends StatelessWidget {
           create: (context) => UserData(),
         ),
         ChangeNotifierProvider(create: (context) => AddWorkProvider()),
+        ChangeNotifierProvider(create: (context) => ExcelProvider()),
         StreamProvider<List<BillNameModel>>.value(value: FirebaseStreams().GetBillName(), initialData: [BillNameModel(billName: "Loading Bill", bill: false)],),
       ],
       child: MaterialApp(
@@ -57,6 +60,7 @@ class MyApp extends StatelessWidget {
           WorkListScreen.id: (context) => WorkListScreen(),
           WorkPerDayList.id: (context) => WorkPerDayList(),
           Addworkwithoutdate.id: (context) => Addworkwithoutdate(),
+          ExcelExport.id: (context) => ExcelExport(),
         },
       ),
     );
